@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Lato&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Dosis|Lato|Noto+Sans+TC&display=swap");
+.header {
+    height: 10vh;
+    color: #FF69B4;
+    font-family: "Noto Sans TC", sans-serif;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    font-size: 5vw;
+}

@@ -11,3 +11,78 @@ body {
 html {
   height: 100%;
 }
+
+input {
+  background-color: #380D4A;
+  border: solid 1.5px #4D1366;
+  height: 50px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 400px;
+  padding: 0px;
+  color: #FFF;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-indent: 30px;
+  margin-bottom: 20px;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  position: absolute;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: solid 1.5px #4D1366;
+  background-color: #4D1366;
+  padding: 0px;
+  margin: 0px;
+  color: #FFF;
+  transition: all .3s cubic-bezier(.8, .03, .25, 1);
+}
+
+::placeholder {
+  color: #745680;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+button:hover {
+  width: 70px;
+}
+
+.list {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 400px;
+}
+
+.todo {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 3px 10px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task {
+  background: #e8e8e8;
+  padding: 300px 100px;
+}
