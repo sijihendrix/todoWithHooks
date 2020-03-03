@@ -6,8 +6,11 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Checkbox from "@material-ui/core/Checkbox";
 import ListItemText from "@material-ui/core/ListItemText";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
 
-function Todos({ todos }) {
+function Todos({ todos, deleteTodo }) {
 	// return (
 	// 	<div className="list">
 	// 		{todos.map((todo, i) => (
@@ -15,12 +18,23 @@ function Todos({ todos }) {
 	// 		))}
 	// 	</div>
 	// );
+
 	return (
 		<List>
 			{todos.map((todo, index) => (
-				<ListItem key={index.toString()} dense button>
+				<ListItem key={index} dense button>
 					<Checkbox tabIndex={-1} disableRipple />
 					<ListItemText primary={todo} />
+					<ListItemSecondaryAction>
+						<IconButton
+							aria-label="Delete"
+							onClick={() => {
+								deleteTodo(index);
+							}}
+						>
+							<DeleteIcon />
+						</IconButton>
+					</ListItemSecondaryAction>
 				</ListItem>
 			))}
 		</List>
@@ -43,7 +57,11 @@ function App() {
 		setTask("");
 		console.log(todos);
 	};
+	const deleteTodo = todoIndex => {
+		const newTodos = todos.filter((_, index) => index !== todoIndex);
 
+		setTodos(newTodos);
+	};
 	return (
 		<div
 			className="App"
@@ -61,7 +79,7 @@ function App() {
 			/>
 			<button onClick={handleSubmit}>+</button>
 
-			<Todos todos={todos} />
+			<Todos todos={todos} deleteTodo={deleteTodo} />
 		</div>
 	);
 }
